@@ -1,0 +1,29 @@
+{% extends "rest_framework/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-primary">Lista de Proyectos</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Tecnología</th>
+                <th>Creado el</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in projects %}
+            <tr>
+                <td>{{ project.id }}</td>
+                <td>{{ project.title }}</td>
+                <td>{{ project.description }}</td>
+                <td>{{ project.technology }}</td>
+                <td>{{ project.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

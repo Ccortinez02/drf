@@ -4,9 +4,9 @@ from .api import ProjectViewSet
 from . import views
 
 router = routers.DefaultRouter()
-
 router.register('api/projects', ProjectViewSet, 'projects')
 
 urlpatterns = [
-    path('', views.index, name='index'),  # Página inicial
+    path('index.html', views.index, name='index'),
+    path('projects/', views.project_list, name='project-list'),
 ] + router.urls
